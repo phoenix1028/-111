@@ -1,0 +1,64 @@
+定义：一组地址连续的存储单元
+#define MaxSize 100;
+typdef struct{
+    int data[MaxSize]
+    int length;
+}SqList;
+动态分配
+#define InitiSize 100;初始长度
+typdef struct{
+    int data[MaxSize]
+    int MaxSize,length;  //最大容量和当前个数
+}SqList;
+
+1.插入操作
+bool ListInsert(SqList *L,int i, int e)
+{
+    if(i < 1 || i>length+1)
+        return false;
+    if(i>=MaxSize)   
+        return false;
+    for(int j=L.length; j>=i; j--){
+        L.data[j] = L.data[j-1];
+    }
+    
+    L.data[j] = e;
+    L.length++;
+    return true;
+}
+
+bool ListDelete(List *L; int i;int e){
+    if(i<1 || i>L.length+1)
+        return false;
+    e = L.data[i-1];
+    for(int j=i; j<L.length; j++){
+        L.data[j-1] = L.data[j];
+    }
+    L.length--;
+    return true;
+}
+链式存储
+单链表
+typedef struct LNode{
+    int data;
+    struct LNode *next;
+}Lnode, *LinkList
+
+
+头插法
+LinkList List(LinkList &L){
+    LNode *s;
+    int x;
+    L  = (LinkList)malloc(sizeof(LNode));
+    L->next = NULL;
+    scanf("%d",&x);
+    while(x!=9999){
+        s = (LinkList)malloc(sizeof(LNode));
+        s->data = x;
+        s->next = L->next;
+        L->next = s;
+        scanf("%d",&x);
+    }
+    return L;
+    
+}
