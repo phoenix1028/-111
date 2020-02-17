@@ -60,5 +60,53 @@ LinkList List(LinkList &L){
         scanf("%d",&x);
     }
     return L;
-    
 }
+
+尾插法
+LinkList List(LinkList &L){
+    L = (LinkList)malloc(sizeof(LNode))
+    LNode *s,*r=L;
+    scanf("%d",&x)
+    while(x!=9999){
+        s = (LinkList)malloc(sizeof(LNode))
+        s->data = x;
+        r->next = s;
+        r = s;
+    }
+    r->next = NULL;
+    return L
+}
+
+按序号查找结点值
+Lnode *GetElem(LinkList L,int i){
+    LNode *p=L->next;
+    int j=1;
+    if(i==0)
+        return l;
+    if(i<1)
+        return 0;
+    while(p && j<i){
+        p=p->next;
+        j++
+    }
+    return p;
+}
+
+LNode *LocatElem(LinkList L,int e){
+    LNode *p=L->next;    
+    while(p !=NULL && p->data != e)
+        p=p->next;
+    return p;
+}
+
+插入结点
+后插，交换数据即可
+p = GetElem（L,i-1）
+s->next = p->next;
+p->next = s;
+
+删除
+q=p->next
+p->next=q->next
+free(q)
+
